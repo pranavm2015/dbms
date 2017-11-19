@@ -11,7 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 
-graph = Graph("http://neo4j:neo4j@localhost:7474/db/data/", user="neo4j", password="born97wdn")
+graph = Graph("http://neo4j:neo4j@localhost:7474/db/data/", user="neo4j", password="dbms")
 
 def index(request):
 	return render (request, "index.html", {})
