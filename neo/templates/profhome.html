@@ -1,0 +1,35 @@
+{% load static %}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Patna Intern Portal</title>
+
+    <link href='{% static "css/bootstrap.min.css" %}' rel="stylesheet">
+
+    <link href='{% static "css/style.css" %}' rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="form" style="align-content: center;align-self: center;align-items: center;text-align: center;">
+<h3>Please respond to the following applications : </h3>
+
+<form method="POST" action="/select/">
+{% for item in applied %}
+
+{{item}} &nbsp &nbsp &nbsp
+<input type="radio" name="{{ item }}" value="yes" id = "yes">Yes &nbsp
+<input type="radio" name="{{ item }}" value="no" id = "no" >No<br><br>
+{% endfor %}
+
+<input type = "hidden" name = "profmail" value = "{{ profmail }}" />
+
+<button type="submit">Submit</button>
+
+</form>
+</div>
+</body>
+
+</html>
